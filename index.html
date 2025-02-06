@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Business Website</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?business,technology') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: #2C3E50;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .services, .testimonials, .contact {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background: #ff9800;
+            padding: 20px;
+            border-radius: 5px;
+            width: 30%;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: scale(1.05);
+            background: #ff9800;
+            color: orange;
+        }
+
+        .testimonial {
+            background: #ff9800;
+            color: Green;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background: #ff9800;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                width: 100%;
+            }
+
+            .testimonial {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">V.J company</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 style="color: #FF9800; font-size: 36px; font-weight: bold;">Grow Your Business with Us</h1>
+         <p style="color: grey; font-size: 18px; font-weight: bold;"> Providing innovative solutions for business growth</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Business Consulting</h3>
+                <p>Strategic advice to scale your business.</p>
+            </div>
+            <div class="service">
+                <h3>Marketing Solutions</h3>
+                <p>Boost your brand with targeted campaigns.</p>
+            </div>
+            <div class="service">
+                <h3>Web Development</h3>
+                <p>Modern websites tailored to your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"V.J company helped us scale our company. Great service!" - Aman singh</p>
+        </div>
+        <div class="testimonial">
+            <p>"Professional and efficient team. Highly recommend!" - Salman khan </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Vishesh.All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            alert("Thank you, " + name + "! Your message has been received.");
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+</body>
+  </html>
